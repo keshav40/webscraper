@@ -37,10 +37,13 @@ def scrape_website(
         raise HTTPException(status_code=400, detail=str(e))
 
     scraped_data = scraper.scrape(num_pages)
-    products = {"products": [product.to_dict() for product in scraped_data]}
+    scraped_products = {"products": [product.to_dict() for product in scraped_data]}
+
+    # print the data collected
+    print(f"Scraped products stored in database: {len(scraped_products['products'])}")
     
     # Save data in JSONStorage.
-    db.save(products)
+    db.save(scraped_products)
     
-    return products
+    return scraped_products
 
