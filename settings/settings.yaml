@@ -1,0 +1,9 @@
+cache:
+  redis_host: "localhost"
+  redis_port: 6379
+
+dentalstall:
+  base_url: "https://dentalstall.com/shop/page/{}"
+  image_dir: "images"
+  security:
+    static_token: "4fba565b-5a15-404d-b2c8-a12c03ddb37f"
